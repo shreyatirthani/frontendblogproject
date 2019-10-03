@@ -8,6 +8,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserCartsComponent } from './user-carts/user-carts.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import {ItemService} from "./item.service";
+import { HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +22,18 @@ import { ProductListComponent } from './product-list/product-list.component';
     NavBarComponent,
     ProductDetailsComponent,
     UserCartsComponent,
-    ProductListComponent
+    ProductListComponent,
+    LoginComponent,
+    SignupComponent,
+    PagenotfoundComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

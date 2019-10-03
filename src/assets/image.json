@@ -1,0 +1,29 @@
+[
+
+  {
+    "url" : '../../assets/images/mango 2.jpeg',
+    "item" : "tshirt1",
+    "price":900,
+    "id":1
+  },
+  {
+    "url": '../../assets/images/mango 2.jpeg',
+    "item":"tshirt2",
+    "price":900,
+    "id":2
+  },
+  {
+    "url": '../../assets/images/Shirt Arrow 4.jpeg',
+    "item":"tshirt3",
+    "price":600,
+    "id":3
+  },
+
+  {
+    url: '../../assets/images/Shirt Arrow 4.jpeg',
+    "item":"tshirt4",
+    "price":700,
+    "id":4
+  }
+
+]
