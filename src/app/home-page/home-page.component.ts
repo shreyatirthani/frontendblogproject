@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import {image} from "./products.constants";
 import {Router} from "@angular/router";
 import {ItemService} from "../item.service";
+import {createElementCssSelector} from "@angular/compiler";
 
 @Component({
   selector: 'app-home-page',
@@ -37,7 +38,7 @@ export class HomePageComponent implements OnInit {
   constructor(private router:Router,private service:ItemService) { }
 xyz;
   electrical;
-
+category1=null;
   ngOnInit(){
   this.service.getDetails().subscribe((data)=>{
       this.ht=data;
@@ -52,18 +53,21 @@ xyz;
   }
   gocat()
   {
+    this.category1='books';
     this.service.getCat('books').subscribe((data1)=>{
       this.ht=data1;
     });
   }
   goelectronics()
   {
+    this.category1='electronics';
     this.service.getCat('electronics').subscribe((data1)=>{
       this.ht=data1;
     });
   }
   goclothes()
   {
+    this.category1='clothes';
     this.service.getCat('clothes').subscribe((data1)=>{
       this.ht=data1;
     });
@@ -74,13 +78,26 @@ xyz;
       this.ht=data;
     });
   }
-  getprice(price1, price2)
-  {
-    this.service.getPrice(price1,price2).subscribe((data1)=>{
-      this.ht=data1;
-    });
 
-  }
+
+
+  gocatprice( price1, price2)
+  {
+    if(this.category1==null) {
+      this.service.getPrice(price1, price2).subscribe((data1) => {
+        this.ht = data1;
+      });
+    }
+    else
+      {
+
+        this.service.getCatprice(this.category1,price1, price2).subscribe((data1) => {
+          this.ht = data1;
+        });
+      }
+    }
+
+
  /* showelectrical()
   {
     this.service.getelectrical('electrical').subscribe((data1)=>{

@@ -16,7 +16,6 @@ demo;
     this.service.getInfo().subscribe((data)=> {
       this.demo = data;
     });
-
   }
 
 }

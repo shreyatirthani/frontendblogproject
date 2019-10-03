@@ -91,5 +91,10 @@ getPrice(price1,price2)
 {
   return this.httpclient.get("http://localhost:2020/api/product1/"+price1+"/between/"+price2);
 }
+getCatprice(type,price1,price2)
+{
+  return this.httpclient.get("http://localhost:2020/api/productcat/"+type +"/"+price1+"/" +price2);
+}
+
 
 }

@@ -34,7 +34,7 @@
         <div style="border:2px solid black " class=" bg bg-light">
           <h3>PRICE</h3>
           <div *ngFor="let prices of price">
-            <input type="radio" (click)="getprice(prices.number1, prices.number2)">{{prices.amt}}<br>
+            <input type="radio" [checked]="" (click)="gocatprice(prices.number1, prices.number2)">{{prices.amt}}<br>
           </div>
 
         </div>
