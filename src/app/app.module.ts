@@ -13,6 +13,9 @@ import { SignupComponent } from './signup/signup.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import {ItemService} from "./item.service";
 import { HttpClientModule} from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
+import {AuthenticationService} from "./authentication.service";
+import {AppService} from "./app.service";
 
 
 @NgModule({
@@ -31,9 +34,10 @@ import { HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [ItemService],
+  providers: [ItemService,AuthenticationService, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

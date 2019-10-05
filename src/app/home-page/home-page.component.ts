@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {ItemService} from "../item.service";
 import {createElementCssSelector} from "@angular/compiler";
+import {AppService} from "../app.service";
 
 @Component({
   selector: 'app-home-page',
@@ -35,16 +36,27 @@ export class HomePageComponent implements OnInit {
       number2: 10000,
     }
   ];
-  constructor(private router:Router,private service:ItemService) { }
+  constructor(private router:Router,private service:ItemService,private appservice:AppService) { }
 xyz;
   electrical;
 category1=null;
   ngOnInit(){
   this.service.getDetails().subscribe((data)=>{
       this.ht=data;
+
     });
+  if(!this.appservice.checklogin())
+  {
+    this.router.navigate(['/login']);
+  }
  // this.uig=this.service.getItemlist();
   }
+  logout()
+  {
+    this.appservice.isLoggedIn(false);
+    this.router.navigate(['/login']);
+  }
+
 
   goToDetails(id)
   {

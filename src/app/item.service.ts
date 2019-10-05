@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 
 
@@ -80,20 +80,24 @@ return this.http.get(url);
    return this.http.get('https://localhost:2020')
  }*/
 getDetails()
-{
-  return this.httpclient.get("http://localhost:2020/api/prodetails");
+{const token=sessionStorage.getItem('token');
+const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/api/prodetails",{headers});
 }
 getCat(type)
-{
-  return this.httpclient.get("http://localhost:2020/api/productcat/"+type);
+{const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/api/productcat/"+type,{headers});
 }
 getPrice(price1,price2)
-{
-  return this.httpclient.get("http://localhost:2020/api/product1/"+price1+"/between/"+price2);
+{const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/api/product1/"+price1+"/between/"+price2,{headers});
 }
 getCatprice(type,price1,price2)
-{
-  return this.httpclient.get("http://localhost:2020/api/productcat/"+type +"/"+price1+"/" +price2);
+{const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/api/productcat/"+type +"/"+price1+"/" +price2,{headers});
 }
 
 
