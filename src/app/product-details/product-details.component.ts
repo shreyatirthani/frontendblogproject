@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 //import{image} from "../home-page/products.constants";
 import {ItemService} from "../item.service";
 
@@ -14,7 +14,9 @@ userid;
 pro=[];
 pro1;
 detail_prod;
-  constructor(private activatedroute:ActivatedRoute,private http:ItemService) { }
+pro2;
+data1;
+  constructor(private activatedroute:ActivatedRoute,private http:ItemService,private router:Router) { }
 
   ngOnInit() {
    // this.pro=this.http.getItemlist();
@@ -32,6 +34,16 @@ detail_prod;
         }
       })
     })
+
+  }
+  additemincart(id)
+  {
+    this.http.addtocart(this.userid).subscribe(data=>
+    {
+      this.pro2=data;
+     // this.router.navigate(['/cart']);
+    });
+    this.router.navigate(['/cart'],{queryParams:{id:id}});
 
   }
 

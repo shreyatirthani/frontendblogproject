@@ -99,6 +99,17 @@ getCatprice(type,price1,price2)
   const headers=new HttpHeaders({Authorization:'Basic '+token});
   return this.httpclient.get("http://localhost:2020/api/productcat/"+type +"/"+price1+"/" +price2,{headers});
 }
+addtocart(id)
+{const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/cart/addproduct/receive/"+id,{headers});
 
+}
+removeproduct(id)
+{
+  const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/cart/removeproduct/receive/"+id,{headers});
 
+}
 }

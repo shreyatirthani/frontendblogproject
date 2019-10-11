@@ -13,6 +13,7 @@ export const MAIN_ROUTES:Routes=[
   {path:'details',component:ProductDetailsComponent },
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
+
   {path:'**',component:PagenotfoundComponent},
 
 ];
