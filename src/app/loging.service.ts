@@ -11,4 +11,8 @@ export class LogingService {
   {
     return this.httpclient.get("http://localhost:2020/apl/log");
   }
+  getuser(json)
+  {
+    return this.httpclient.post("http://localhost:2020/apl/sign",json);
+  }
 }

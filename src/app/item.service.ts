@@ -112,4 +112,22 @@ removeproduct(id)
   return this.httpclient.get("http://localhost:2020/cart/removeproduct/receive/"+id,{headers});
 
 }
+increment(id)
+{
+  const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/cart/increment/receive/"+id,{headers});
+}
+  decrement(id)
+  {
+    const token=sessionStorage.getItem('token');
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.httpclient.get("http://localhost:2020/cart/decrement/receive/"+id,{headers});
+  }
+  showcart()
+  { const token=sessionStorage.getItem('token');
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.httpclient.get("http://localhost:2020/cart/showcart/receive",{headers});
+
+  }
 }

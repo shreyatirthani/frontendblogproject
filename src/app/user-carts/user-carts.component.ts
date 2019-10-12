@@ -12,11 +12,17 @@ public productdetail;
 public pro1;
 public userid;
 public pro2;
+public pro3;
+public pro4;
+public ht;
+
+public total=0;
+public sum=0;
   constructor(private http:ItemService,private activatedroute:ActivatedRoute) { }
 
   ngOnInit() {
 
-    this.http.getDetails().subscribe((data) => {
+   /* this.http.getDetails().subscribe((data) => {
       this.pro1 = data;
       console.log(this.pro1);
       this.activatedroute.queryParams.subscribe(arg => {
@@ -28,16 +34,52 @@ public pro2;
           }
         }
       })
-    })
+    })*/
+    this.http.showcart().subscribe(data=>{
+
+      this.ht=data;
+      for(let i=0;i<this.ht.length;i++)
+      {
+        this.sum+=this.ht[i].items.price*(this.ht[i].quantity);
+      }
+
+    });
+
+
+
+
   }
     remove1(id)
-    {this.http.removeproduct(this.userid).subscribe(data=>
+    {this.http.removeproduct(id).subscribe(data=>
     {
-      this.pro2=data;
+      this.ht=data;
+      this.ngOnInit();
       // this.router.navigate(['/cart']);
     });
-alert("item removed");
+//alert("item removed");
+
     }
+increment(id)
+{
+  this.http.increment(id).subscribe(data=>
+  {
+    this.ht=data;
+   this.ngOnInit();
+  })
+
+
+
+}
+  decrement(id)
+  {
+    this.http.decrement(id).subscribe(data=>
+    {
+      this.ht=data;
+      this.ngOnInit();
+    })
+
+
+  }
 
 
 

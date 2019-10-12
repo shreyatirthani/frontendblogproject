@@ -39,5 +39,8 @@ logout()
 {
   this.service.isLoggedIn(false);
 }
-
+login22()
+{
+  this.router.navigate(['/signup']);
+}
 }

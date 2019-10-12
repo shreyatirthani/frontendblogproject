@@ -14,6 +14,7 @@ export class HomePageComponent implements OnInit {
   //images = image;
  public uig=[];
  ht;
+ public demo;
   price=[
     {
       "amt":"200-400",
@@ -108,6 +109,7 @@ category1=null;
         });
       }
     }
+
 
 
  /* showelectrical()

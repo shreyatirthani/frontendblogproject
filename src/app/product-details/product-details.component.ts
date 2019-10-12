@@ -43,7 +43,7 @@ data1;
       this.pro2=data;
      // this.router.navigate(['/cart']);
     });
-    this.router.navigate(['/cart'],{queryParams:{id:id}});
+    this.router.navigate(['/cart']);
 
   }
 
