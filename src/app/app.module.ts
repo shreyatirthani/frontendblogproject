@@ -16,6 +16,8 @@ import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
 import {AuthenticationService} from "./authentication.service";
 import {AppService} from "./app.service";
+import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {AppService} from "./app.service";
     ProductListComponent,
     LoginComponent,
     SignupComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    OrderhistoryComponent,
+    ProfileComponent
 
   ],
   imports: [

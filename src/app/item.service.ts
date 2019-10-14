@@ -130,4 +130,16 @@ increment(id)
     return this.httpclient.get("http://localhost:2020/cart/showcart/receive",{headers});
 
   }
+  orderhistory()
+  {const token=sessionStorage.getItem('token');
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.httpclient.get("http://localhost:2020/cart/checkout",{headers});
+
+  }
+  getprofile()
+  {
+    const token=sessionStorage.getItem('token');
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.httpclient.get("http://localhost:2020/apl/show",{headers});
+  }
 }

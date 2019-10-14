@@ -18,7 +18,7 @@ public ht;
 
 public total=0;
 public sum=0;
-  constructor(private http:ItemService,private activatedroute:ActivatedRoute) { }
+  constructor(private http:ItemService,private activatedroute:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
 
@@ -79,6 +79,10 @@ increment(id)
     })
 
 
+  }
+  order()
+  {
+    this.router.navigate(['/orderhistory']);
   }
 
 

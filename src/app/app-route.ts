@@ -5,6 +5,8 @@ import {ProductDetailsComponent} from "./product-details/product-details.compone
 import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
+import {OrderhistoryComponent} from "./orderhistory/orderhistory.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 export const MAIN_ROUTES:Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -13,7 +15,8 @@ export const MAIN_ROUTES:Routes=[
   {path:'details',component:ProductDetailsComponent },
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-
+  {path:'orderhistory',component:OrderhistoryComponent },
+  {path:'profile',component:ProfileComponent },
   {path:'**',component:PagenotfoundComponent},
 
 ];

@@ -1,7 +1,10 @@
 
 <div *ngFor="let productdetail of ht">
-<div style="border:1px solid black; background-color:yellow">
-item with {{productdetail.items.name}} and {{productdetail.items.price}} is added successfully
+<div style="border:1px solid black; background-color:palegoldenrod; width:500px ;margin-top:10px">
+
+  <div style="display:flex;flex-wrap:nowrap">
+    <img src=" {{productdetail.items.image}}">  <h3>{{productdetail.items.name}} is added  Rs.{{productdetail.items.price}} </h3>
+  </div>
   <button class="btn btn-primary" (click)=remove1(productdetail.items.product_id)>remove product</button>
   <button class="btn btn-danger" (click)=increment(productdetail.items.product_id)>+</button>
   <input type="text" value={{productdetail.quantity}}> <button class="btn btn-danger" (click)=decrement(productdetail.items.product_id)>-</button>
@@ -9,4 +12,6 @@ item with {{productdetail.items.name}} and {{productdetail.items.price}} is adde
 </div>
 
 </div>
-{{sum}}
+<div style="background-color:palegoldenrod; width:200px;border:1px solid black"><h3>Total Rs.{{sum}}</h3></div>
+<button class="btn btn-primary" (click)="order()">checkout</button>
+
