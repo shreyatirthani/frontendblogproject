@@ -10,6 +10,8 @@ import {Router} from "@angular/router";
 export class SignupComponent implements OnInit {
 email;
 password;
+phoneno;
+address;
 public demo;
   constructor(private service: LogingService,private router:Router) { }
 
@@ -19,7 +21,9 @@ signup()
 {
 let json={
   "email":this.email,
-  "password":this.password
+  "password":this.password,
+  "phoneno":this.phoneno,
+  "address":this.address
 }
 this.service.getuser(json).subscribe(response =>{
   this.demo=response;

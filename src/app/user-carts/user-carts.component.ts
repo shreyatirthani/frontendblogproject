@@ -53,6 +53,10 @@ public sum=0;
     {this.http.removeproduct(id).subscribe(data=>
     {
       this.ht=data;
+      for(let i=0;i<this.ht.length;i++)
+      {
+        this.sum+=this.ht[i].items.price*(this.ht[i].quantity);
+      }
       this.ngOnInit();
       // this.router.navigate(['/cart']);
     });
@@ -64,6 +68,10 @@ increment(id)
   this.http.increment(id).subscribe(data=>
   {
     this.ht=data;
+    for(let i=0;i<this.ht.length;i++)
+    {
+      this.sum+=this.ht[i].items.price*(this.ht[i].quantity);
+    }
    this.ngOnInit();
   })
 

@@ -142,4 +142,10 @@ increment(id)
     const headers=new HttpHeaders({Authorization:'Basic '+token});
     return this.httpclient.get("http://localhost:2020/apl/show",{headers});
   }
+  updation(json)
+  {
+    const token=sessionStorage.getItem('token');
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.httpclient.put("http://localhost:2020/apl/update",json,{headers});
+  }
 }

@@ -7,12 +7,23 @@ import {ItemService} from "../item.service";
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-public profile;
+profile;
+public pro;
+public email;
+public password;
+public phoneno;
+public address;
   constructor(private service:ItemService) { }
 
   ngOnInit() {
     this.service.getprofile().subscribe(data=>
     this.profile=data
+    )
+  }
+  update()
+  {
+    this.service.updation(this.profile).subscribe(data=>
+      this.profile=data
     )
   }
 

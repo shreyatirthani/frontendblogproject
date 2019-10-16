@@ -1,8 +1,12 @@
-<h1>orderhistory</h1>
+<h2 style="margin-left:350px;">My Order-History</h2>
+<div style="background-color:palegoldenrod ;margin-left:350px;margin-top:5%;border:3px solid black ;width:300px;">
 <div *ngFor="let demo of user">
-  {{demo.itemname}}
-{{demo.price}}
-  {{demo.quantity}}
-  {{demo.date}}
+  <ul>
+  <li>{{demo.itemname}}
+<p>price :{{demo.price}}<p>
+    <p>Quantity:{{demo.quantity}}</p>
+    <p>Purchased On:{{demo.date}}</p></li>
+  </ul>
+</div>
 </div>
 

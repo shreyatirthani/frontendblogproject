@@ -17,11 +17,19 @@
           <label for="materialLoginFormEmail"> </label>
         </div>
         <div class="md-form">
-         password <input type="text" id="materialLoginFormPassword" class="form-control" placeholder="password" name="password" [(ngModel)]="profile.password">
+         password <input type="password" id="materialLoginFormPassword" class="form-control" placeholder="password" name="password" [(ngModel)]="profile.password">
           <label for="materialLoginFormPassword" ></label>
 
         </div>
-
+        <div class="md-form">
+          phoneno <input type="email" id="materialLoginForm" class="form-control" placeholder="phoneno" name="phoneno" [(ngModel)]="profile.phoneno">
+          <label for="materialLoginFormEmail"> </label>
+        </div>
+        <div class="md-form">
+         address <input type="email" id="materialLogi" class="form-control" placeholder="address" name="address" [(ngModel)]="profile.address">
+          <label for="materialLoginFormEmail"> </label>
+        </div>
+<button class="btn btn-primary" (click)="update()">update info</button>
         <div class="d-flex justify-content-around">
           <div>
             <!-- Remember me -->
