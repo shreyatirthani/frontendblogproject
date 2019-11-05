@@ -18,6 +18,8 @@ import {AuthenticationService} from "./authentication.service";
 import {AppService} from "./app.service";
 import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+import { EditproductComponent } from './editproduct/editproduct.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { ProfileComponent } from './profile/profile.component';
     SignupComponent,
     PagenotfoundComponent,
     OrderhistoryComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddproductComponent,
+    EditproductComponent
 
   ],
   imports: [

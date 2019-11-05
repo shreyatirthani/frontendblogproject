@@ -1,5 +1,6 @@
 <h1 style="color:red ;margin-left:500px">My Cart</h1>
 <div style="display:flex;flex-direction:column;margin-left:300px;">
+  <div class= "btn btn-info" (click)="clear()">clear my cart</div>
 <div *ngFor="let productdetail of ht">
 <div style="border:3px solid black; background-color:palegoldenrod; width:500px ;margin-top:10px">
 
@@ -13,6 +14,7 @@
 
 </div>
 </div>
+
 </div>
 <div style="margin-left:300px">
 <div style="background-color:palegoldenrod; width:200px;border:1px solid black"><h3>Total Rs.{{sum}}</h3></div>

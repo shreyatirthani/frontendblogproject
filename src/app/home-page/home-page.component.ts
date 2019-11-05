@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {ItemService} from "../item.service";
 import {createElementCssSelector} from "@angular/compiler";
 import {AppService} from "../app.service";
+import {LogingService} from "../loging.service";
 
 @Component({
   selector: 'app-home-page',
@@ -12,8 +13,11 @@ import {AppService} from "../app.service";
 })
 export class HomePageComponent implements OnInit {
   //images = image;
+  checkrole;
+  profile;
  public uig=[];
  ht;
+ name;
  public demo;
   price=[
     {
@@ -37,14 +41,25 @@ export class HomePageComponent implements OnInit {
       number2: 10000,
     }
   ];
-  constructor(private router:Router,private service:ItemService,private appservice:AppService) { }
+  constructor(private router:Router,private service:ItemService,private appservice:AppService,private service1:LogingService) { }
 xyz;
   electrical;
 category1=null;
   ngOnInit(){
+    this.service.getprofile().subscribe(data=> {
+        this.profile = data;
+        if (this.profile.email== "admin")
+          this.checkrole = true;
+        else
+          this.checkrole = false;
+      }
+    );
   this.service.getDetails().subscribe((data)=>{
       this.ht=data;
 
+    });
+    this.service.getDetails().subscribe((data)=> {
+      this.ht = data;
     });
   if(!this.appservice.checklogin())
   {
@@ -93,7 +108,10 @@ category1=null;
   }
 
 
-
+namecheck()
+{
+  this.service.getName(this.name).subscribe(data=>{this.ht=data});
+}
   gocatprice( price1, price2)
   {
     if(this.category1==null) {

@@ -5,6 +5,7 @@
   <h3> {{detail_prod.category}}</h3>
 
 <div class="btn btn-info"(click)="additemincart(detail_prod.product_id)">add to cart</div>
+   <div class="btn btn-info"(click)="edit()" *ngIf="checkrole">editproduct</div>
 </div>
 
 

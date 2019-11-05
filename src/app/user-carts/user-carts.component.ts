@@ -15,7 +15,7 @@ public pro2;
 public pro3;
 public pro4;
 public ht;
-
+public demo;
 public total=0;
 public sum=0;
   constructor(private http:ItemService,private activatedroute:ActivatedRoute,private router:Router) { }
@@ -93,7 +93,13 @@ increment(id)
     this.router.navigate(['/orderhistory']);
   }
 
-
+clear()
+{
+  this.http.clearcart().subscribe(data=>{
+    this.demo=data;
+    alert("your cart is cleared");
+  })
+}
 
 
 

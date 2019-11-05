@@ -7,6 +7,8 @@ import {SignupComponent} from "./signup/signup.component";
 import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
 import {OrderhistoryComponent} from "./orderhistory/orderhistory.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {AddproductComponent} from "./addproduct/addproduct.component";
+import {EditproductComponent} from "./editproduct/editproduct.component";
 
 export const MAIN_ROUTES:Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -17,6 +19,8 @@ export const MAIN_ROUTES:Routes=[
   {path:'signup',component:SignupComponent},
   {path:'orderhistory',component:OrderhistoryComponent },
   {path:'profile',component:ProfileComponent },
+  {path:'addproduct',component:AddproductComponent },
+  {path:'editproduct',component:EditproductComponent },
   {path:'**',component:PagenotfoundComponent},
 
 ];

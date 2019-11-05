@@ -84,6 +84,11 @@ getDetails()
 const headers=new HttpHeaders({Authorization:'Basic '+token});
   return this.httpclient.get("http://localhost:2020/api/prodetails",{headers});
 }
+  edit(id)
+  {const token=sessionStorage.getItem('token');
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.httpclient.get("http://localhost:2020/api/prodetails/"+id,{headers});
+  }
 getCat(type)
 {const token=sessionStorage.getItem('token');
   const headers=new HttpHeaders({Authorization:'Basic '+token});
@@ -148,4 +153,28 @@ increment(id)
     const headers=new HttpHeaders({Authorization:'Basic '+token});
     return this.httpclient.put("http://localhost:2020/apl/update",json,{headers});
   }
+  addproduct(json)
+  {
+    const token=sessionStorage.getItem('token');
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.httpclient.post("http://localhost:2020/api/createproduct",json,{headers});
+  }
+  editproduct(id,json)
+  {
+    const token=sessionStorage.getItem('token');
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.httpclient.put("http://localhost:2020/api/editproduct/"+id,json,{headers});
+  }
+getName(name)
+{
+  const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/api/productname/"+name,{headers});
+}
+clearcart()
+{
+  const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/cart/clear",{headers});
+}
 }

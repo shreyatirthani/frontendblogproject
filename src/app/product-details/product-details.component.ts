@@ -15,10 +15,21 @@ pro=[];
 pro1;
 detail_prod;
 pro2;
+checkrole;
+profile;
+
 data1;
   constructor(private activatedroute:ActivatedRoute,private http:ItemService,private router:Router) { }
 
   ngOnInit() {
+    this.http.getprofile().subscribe(data=> {
+        this.profile = data;
+        if (this.profile.email== "admin")
+          this.checkrole = true;
+        else
+          this.checkrole = false;
+      }
+    )
    // this.pro=this.http.getItemlist();
    // this.pro1=this.http.getDetails();
     this.http.getDetails().subscribe((data)=> {
@@ -46,5 +57,8 @@ data1;
     this.router.navigate(['/cart']);
 
   }
-
+edit()
+{
+  this.router.navigate(['/editproduct'],{queryParams:{id:this.userid}});
+}
 }
