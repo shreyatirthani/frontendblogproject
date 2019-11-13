@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
   profile;
  public uig=[];
  ht;
- name;
+ public name;
  public demo;
   price=[
     {
@@ -46,21 +46,25 @@ xyz;
   electrical;
 category1=null;
   ngOnInit(){
-    this.service.getprofile().subscribe(data=> {
+   /* this.service.getprofile().subscribe(data=> {
         this.profile = data;
         if (this.profile.email== "admin")
           this.checkrole = true;
         else
           this.checkrole = false;
       }
-    );
-  this.service.getDetails().subscribe((data)=>{
+    );*/
+    this.service.getDetails().subscribe((data)=>{
+      this.ht=data;
+    });
+
+ /* this.service.getDetails().subscribe((data)=>{
       this.ht=data;
 
-    });
-    this.service.getDetails().subscribe((data)=> {
+    });*/
+   /* this.service.getDetails().subscribe((data)=> {
       this.ht = data;
-    });
+    });*/
   if(!this.appservice.checklogin())
   {
     this.router.navigate(['/login']);
@@ -81,22 +85,29 @@ category1=null;
   }
   gocat()
   {
-    this.category1='books';
-    this.service.getCat('books').subscribe((data1)=>{
+
+    this.service.getCat('fashion').subscribe((data1)=>{
       this.ht=data1;
     });
   }
   goelectronics()
   {
-    this.category1='electronics';
-    this.service.getCat('electronics').subscribe((data1)=>{
+
+    this.service.getCat('fitness').subscribe((data1)=>{
       this.ht=data1;
     });
   }
   goclothes()
   {
-    this.category1='clothes';
-    this.service.getCat('clothes').subscribe((data1)=>{
+
+    this.service.getCat('cooking').subscribe((data1)=>{
+      this.ht=data1;
+    });
+  }
+  gopoems()
+  {
+
+    this.service.getCat('poems').subscribe((data1)=>{
       this.ht=data1;
     });
   }
@@ -106,12 +117,21 @@ category1=null;
       this.ht=data;
     });
   }
-
-
-namecheck()
+  gotravel()
+  {
+    this.service.getCat('travel').subscribe((data1)=> {
+      this.ht = data1;
+    });
+  }
+searching()
 {
-  this.service.getName(this.name).subscribe(data=>{this.ht=data});
+  this.router.navigate(['/search1'],{queryParams:{name:this.name}});
+  /*this.service.search(this.name).subscribe(data=>{
+    this.ht=data;
+
+  })*/
 }
+
   gocatprice( price1, price2)
   {
     if(this.category1==null) {

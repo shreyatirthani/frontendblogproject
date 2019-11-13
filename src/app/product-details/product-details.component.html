@@ -1,11 +1,12 @@
-<div style="background-color:papayawhip ;border:2px solid black; width:300px;margin-left:40%" class="mt-4">
- <img src={{detail_prod.image}}>
-<h3>{{detail_prod.name}}</h3>
-<h3>RS {{detail_prod.price}}</h3>
-  <h3> {{detail_prod.category}}</h3>
+<div style="background-color:palegoldenrod ;border:2px solid black; width:300px;margin-left:40%;"class="mt-4">
+ <img src={{detail_prod.image}} style="padding-left:80px;height:200px ; width: 200px">
+<h4>ALL ABOUT {{detail_prod.blogname}}!!</h4>
+<i>{{detail_prod.content}}</i><br>
+  <!--<i style="color:red"><b> AUTHOR->{{detail_prod.owner}}</b></i><br>-->
 
-<div class="btn btn-info"(click)="additemincart(detail_prod.product_id)">add to cart</div>
-   <div class="btn btn-info"(click)="edit()" *ngIf="checkrole">editproduct</div>
+<div class="btn btn-info"(click)="subscribe(detail_prod.id)">show</div>
+  <div class="btn btn-info"(click)="remove(detail_prod.id)" *ngIf="checkrole">remove</div>
+  <!-- <div class="btn btn-info"(click)="edit()" *ngIf="checkrole">editproduct</div>-->
 </div>
 
 

@@ -1,7 +1,7 @@
 <div class="card">
 
   <h5 class="card-header info-color white-text text-center py-4">
-    <strong>edit product</strong>
+    <strong>edit blog</strong>
   </h5>
 
   <!--Card content-->
@@ -13,19 +13,20 @@
 
         <!-- Email -->
         <div class="md-form">
-          <input type="text" id="materialLoginFormEmail" class="form-control" placeholder="name" name="name" [(ngModel)]="product.name">
+          <input type="text" id="materialLoginFormEmail" class="form-control" placeholder="name" name="blogname" [(ngModel)]="product.blogname">
           <label for="materialLoginFormEmail"> </label>
         </div>
 
         <!-- Password -->
 
         <div class="md-form">
-          <input type="text" id="materialLoginmEmail" class="form-control" placeholder="category" name="category" [(ngModel)]="product.category">
+          <input type="text" id="materialLoginmEmail" class="form-control" placeholder="title" name="content" [(ngModel)]="product.content">
           <label for="materialLoginFormEmail"> </label>
         </div>
         <div class="md-form">
-          <input type="text" id="materialLoginEmail" class="form-control" placeholder="price" name="price" [(ngModel)]="product.price">
+          <textarea rows="50"cols="50" id="materialLoginEmail" class="form-control" placeholder="paragraph" name="paragraph" [(ngModel)]="product.paragraph">
           <label for="materialLoginFormEmail"> </label>
+          </textarea>
         </div>
         <div class="d-flex justify-content-around">
           <div>
@@ -39,7 +40,7 @@
         </div>
 
         <!-- Sign in button -->
-        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" (click)="editproduct()">Submit</button>
+        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" (click)="updateblog()">Submit</button>
 
         <!-- Register -->
 

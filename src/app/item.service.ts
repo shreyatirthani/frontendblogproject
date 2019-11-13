@@ -82,7 +82,7 @@ return this.http.get(url);
 getDetails()
 {const token=sessionStorage.getItem('token');
 const headers=new HttpHeaders({Authorization:'Basic '+token});
-  return this.httpclient.get("http://localhost:2020/api/prodetails",{headers});
+  return this.httpclient.get("http://localhost:2020/blog/getallblogs",{headers});
 }
   edit(id)
   {const token=sessionStorage.getItem('token');
@@ -92,7 +92,7 @@ const headers=new HttpHeaders({Authorization:'Basic '+token});
 getCat(type)
 {const token=sessionStorage.getItem('token');
   const headers=new HttpHeaders({Authorization:'Basic '+token});
-  return this.httpclient.get("http://localhost:2020/api/productcat/"+type,{headers});
+  return this.httpclient.get("http://localhost:2020/blog/name/"+type,{headers});
 }
 getPrice(price1,price2)
 {const token=sessionStorage.getItem('token');
@@ -157,7 +157,7 @@ increment(id)
   {
     const token=sessionStorage.getItem('token');
     const headers=new HttpHeaders({Authorization:'Basic '+token});
-    return this.httpclient.post("http://localhost:2020/api/createproduct",json,{headers});
+    return this.httpclient.post("http://localhost:2020/sub/addblog",json,{headers});
   }
   editproduct(id,json)
   {
@@ -176,5 +176,17 @@ clearcart()
   const token=sessionStorage.getItem('token');
   const headers=new HttpHeaders({Authorization:'Basic '+token});
   return this.httpclient.get("http://localhost:2020/cart/clear",{headers});
+}
+search(name)
+{const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/sub/getuser/"+name,{headers});
+
+}
+subscribeblogs(id)
+{
+  const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/sub/subscribe/"+id,{headers});
 }
 }

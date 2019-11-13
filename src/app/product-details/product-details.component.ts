@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 //import{image} from "../home-page/products.constants";
 import {ItemService} from "../item.service";
+import {LogingService} from "../loging.service";
 
 @Component({
   selector: 'app-product-details',
@@ -19,12 +20,12 @@ checkrole;
 profile;
 
 data1;
-  constructor(private activatedroute:ActivatedRoute,private http:ItemService,private router:Router) { }
+  constructor(private activatedroute:ActivatedRoute,private http:ItemService,private router:Router,private service1:LogingService) { }
 
   ngOnInit() {
     this.http.getprofile().subscribe(data=> {
         this.profile = data;
-        if (this.profile.email== "admin")
+        if (this.profile.role== "moderator")
           this.checkrole = true;
         else
           this.checkrole = false;
@@ -39,7 +40,7 @@ data1;
         this.userid = arg.id;
         console.log(this.userid);
         for (let i = 0; i < this.pro1.length; i++) {
-          if (this.userid == this.pro1[i].product_id) {
+          if (this.userid == this.pro1[i].id) {
             this.detail_prod = this.pro1[i];
           }
         }
@@ -61,4 +62,16 @@ edit()
 {
   this.router.navigate(['/editproduct'],{queryParams:{id:this.userid}});
 }
+subscribe(id)
+{
+
+  this.router.navigate(['/view'],{queryParams:{id:id}});
+}
+remove(id)
+{
+  this.service1.unsub(id).subscribe(data=>{
+    this.pro1=data;
+  })
+}
+
 }

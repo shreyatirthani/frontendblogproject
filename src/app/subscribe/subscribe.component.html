@@ -1,0 +1,16 @@
+<h1 style="color:red ;margin-left:500px">My Blogs</h1>
+<div style="display:flex;flex-direction:column;margin-left:300px;">
+
+  <div *ngFor="let productdetail of ht">
+
+    <div style="border:3px solid black; background-color:palegoldenrod; width:500px ;margin-top:10px">
+      <div style="display:flex;flex-direction:column;">
+     <!-- <div style="display:flex;flex-wrap:nowrap ;margin-top:50px;">-->
+        <div style="padding-left:150px;padding-top:0px;"><img src=" {{productdetail.image}}" height="200" width="200"></div><br>
+        <div style="padding-left:10px;padding-bottom:10px;padding-top:10px"><h3>ABOUT {{productdetail.blogname}}!!</h3></div>
+        <div style="padding-left:10px;padding-bottom:10px;padding-top:10px">{{productdetail.content}}</div>
+        <div class="btn btn-info" style="height:50px;width:150px;margin-left:180px"(click)="un(productdetail.id)">delete</div>
+        <div class="btn btn-info" style="height:50px;width:150px;margin-left:180px; margin-top:5px"(click)="getdata(productdetail.id)">show</div>
+      </div>
+    </div>
+  </div>

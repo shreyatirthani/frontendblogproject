@@ -20,6 +20,11 @@ import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { EditproductComponent } from './editproduct/editproduct.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
+import { ViewComponent } from './view/view.component';
+import { ViewdetailComponent } from './viewdetail/viewdetail.component';
+import { Search1Component } from './search1/search1.component';
+import { Subscribe11Component } from './subscribe11/subscribe11.component';
 
 
 @NgModule({
@@ -36,7 +41,12 @@ import { EditproductComponent } from './editproduct/editproduct.component';
     OrderhistoryComponent,
     ProfileComponent,
     AddproductComponent,
-    EditproductComponent
+    EditproductComponent,
+    SubscribeComponent,
+    ViewComponent,
+    ViewdetailComponent,
+    Search1Component,
+    Subscribe11Component
 
   ],
   imports: [

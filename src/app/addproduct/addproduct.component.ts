@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemService} from "../item.service";
+import {LogingService} from "../loging.service";
 
 @Component({
   selector: 'app-addproduct',
@@ -7,25 +8,30 @@ import {ItemService} from "../item.service";
   styleUrls: ['./addproduct.component.scss']
 })
 export class AddproductComponent implements OnInit {
-public name;
-public price;
-public details;
-public category;
-  constructor(private service:ItemService) { }
+public blogname;
+public owner;
+public content;
+public title;
+public ht;
+public paragraph;
+  constructor(private service:ItemService,private service1:LogingService) { }
 
   ngOnInit() {
+    this.service1.showmyblogs().subscribe(data=>{
+      this.ht=data;
+    })
   }
 addproduct()
 {
   let json={
-    "name":this.name,
-  "price":this.price,
-    "details":this.details,
-    "category":this.category,
-
+    "blogname":this.blogname,
+  "owner":this.owner,
+    "paragraph":this.paragraph,
+    "content":this.content
   };
   this.service.addproduct(json).subscribe(data=>{
-    alert("product added");
+    //alert("blog saved");
+    this.ht=data;
   })
 }
 

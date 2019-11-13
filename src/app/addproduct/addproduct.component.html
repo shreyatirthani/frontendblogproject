@@ -1,7 +1,7 @@
 <div class="card">
 
   <h5 class="card-header info-color white-text text-center py-4">
-    <strong>add product</strong>
+    <strong>MY BLOG</strong>
   </h5>
 
   <!--Card content-->
@@ -13,22 +13,20 @@
 
         <!-- Email -->
         <div class="md-form">
-          <input type="text" id="materialLoginFormEmail" class="form-control" placeholder="name" name="name" [(ngModel)]="name">
+          <input type="text" id="materialLoginFormEmail" class="form-control" placeholder="blogname" name="blogname" [(ngModel)]="blogname">
           <label for="materialLoginFormEmail"> </label>
         </div>
 
         <!-- Password -->
+
         <div class="md-form">
-          <input type="text" id="materialLoginFormPassword" class="form-control" placeholder="details" name="detail"[(ngModel)]="details">
-          <label for="materialLoginFormPassword" ></label>
-        </div>
-        <div class="md-form">
-          <input type="text" id="materialLoginmEmail" class="form-control" placeholder="category" name="category" [(ngModel)]="category">
+          <input type="text" id="materialLoginmEmail" class="form-control" placeholder="title" name="content" [(ngModel)]="content">
           <label for="materialLoginFormEmail"> </label>
         </div>
         <div class="md-form">
-          <input type="text" id="materialLoginEmail" class="form-control" placeholder="price" name="price" [(ngModel)]="price">
+          <textarea rows="20"cols="100" id="materialLoginEmail" class="form-control" placeholder="content" name="paragraph" [(ngModel)]="paragraph">
           <label for="materialLoginFormEmail"> </label>
+          </textarea>
         </div>
         <div class="d-flex justify-content-around">
           <div>
