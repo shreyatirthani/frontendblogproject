@@ -20,7 +20,16 @@
         <!-- Password -->
 
         <div class="md-form">
-          <input type="text" id="materialLoginmEmail" class="form-control" placeholder="title" name="content" [(ngModel)]="content">
+          <input type="text" id="materiaEmail" class="form-control" placeholder="title" name="content" [(ngModel)]="content">
+          <label for="materialLoginFormEmail"> </label>
+        </div>
+       <!-- <div class="md-form">
+          <input type="radio" id="materialLoginmEl" name="public" class="form-control">public
+          <input type="radio" id="materiLoginmEl" name="public" class="form-control">public
+          <label for="materialLoginFormEmail"> </label>
+        </div>-->
+        <div class="md-form">
+          <input type="text" id="materialLoginmEmail" class="form-control" placeholder="status" name="status" [(ngModel)]="status">
           <label for="materialLoginFormEmail"> </label>
         </div>
         <div class="md-form">
@@ -38,7 +47,8 @@
 
           </div>
         </div>
-
+<!--<input type="radio" name="status">private<br>
+        <input type="radio" name="status">public-->
         <!-- Sign in button -->
         <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" (click)="addproduct()">Submit</button>
 

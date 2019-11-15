@@ -17,12 +17,13 @@ export class SubscribeComponent implements OnInit {
     this.service.showmyblogs().subscribe(data => {
       this.ht = data;
     })
+
   }
 
   un(id) {
     this.service.unsub(id).subscribe(data => {
       this.ht = data;
-      alert("your blog is unsubscribed");
+      alert(data);
     })
   }
 

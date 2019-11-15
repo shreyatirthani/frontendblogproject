@@ -14,6 +14,7 @@ public content;
 public title;
 public ht;
 public paragraph;
+public status;
   constructor(private service:ItemService,private service1:LogingService) { }
 
   ngOnInit() {
@@ -21,13 +22,15 @@ public paragraph;
       this.ht=data;
     })
   }
+
 addproduct()
 {
   let json={
     "blogname":this.blogname,
   "owner":this.owner,
     "paragraph":this.paragraph,
-    "content":this.content
+    "content":this.content,
+  "status":this.status
   };
   this.service.addproduct(json).subscribe(data=>{
     //alert("blog saved");

@@ -1,6 +1,11 @@
+<div *ngIf="check">
 <h3 style="margin-left:450px;">{{demo.blogname}}!!</h3>
-<div style="background-color:palegoldenrod ; width:300px; margin-left:450px;" >
+<div style="background-color:palegoldenrod ; width:300px; margin-left:450px;">
   <i>{{demo.paragraph}}</i>
+</div>
+</div>
+<div *ngIf="!check">
+  <h3 style="margin-left:150px;">this account is private need  to follow for viewing</h3>
 </div>
 
 

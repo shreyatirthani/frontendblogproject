@@ -23,6 +23,7 @@ public ht;
 delfollow(name)
 {
   this.service1.delfollow(name).subscribe(data=>{
+    alert("unfollow");
     this.ht=data;
   })
 }

@@ -11,7 +11,10 @@ import {LogingService} from "../loging.service";
 export class Search1Component implements OnInit {
   public username;
   public ht;
-
+public check;
+public ht1;
+public following=false;
+public pr;
   constructor(private service: ItemService, private activatedroute: ActivatedRoute,private router:Router,private service1:LogingService) {
   }
 
@@ -20,9 +23,23 @@ export class Search1Component implements OnInit {
       this.username = arg.name;
     })
     this.service.search(this.username).subscribe(data => {
+
       this.ht = data;
+      if(this.ht.status=="private") {
+        this.pr = false;
+      }
+       else if(this.ht.status=="public")
+        {
+          this.pr=true;
+        }
 
 
+    })
+    this.service.following(this.username).subscribe(data=>{
+      if(data=="true")
+      {
+        this.following=true;
+      }
     })
   }
     getdata11(id)
@@ -30,9 +47,10 @@ export class Search1Component implements OnInit {
       this.router.navigate(['/view'],{queryParams:{id:id}});
     }
     follow(name)
-    {
+    { this.following=true;
       this.service1.follow(name).subscribe(data=>{
         alert("following her");
+
         this.ht=data;
       })
     }

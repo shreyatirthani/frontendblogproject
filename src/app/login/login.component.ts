@@ -13,7 +13,7 @@ import {AuthenticationService} from "../authentication.service";
 export class LoginComponent implements OnInit {
   email;
   password;
-
+invalid=false;
   constructor(private router:Router,private service: AppService,private authservice:AuthenticationService) { }
 
   ngOnInit() {
@@ -29,8 +29,11 @@ export class LoginComponent implements OnInit {
 
     this.authservice.authenticate(this.email,this.password).subscribe(
       data=> {
+        alert("login successfull");
         this.service.isLoggedIn(true);
         this.router.navigate(['home']);
+      },(err) =>{
+        alert("invalid details");
       }
     );
 //alert("invalid credentials");
