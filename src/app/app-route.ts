@@ -14,6 +14,7 @@ import {ViewComponent} from "./view/view.component";
 import {Search1Component} from "./search1/search1.component";
 import {Subscribe11Component} from "./subscribe11/subscribe11.component";
 import {ViewdetailComponent} from "./viewdetail/viewdetail.component";
+import {CommentComponent} from "./comment/comment.component";
 
 export const MAIN_ROUTES:Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -31,6 +32,7 @@ export const MAIN_ROUTES:Routes=[
   {path:'search1',component:Search1Component},
   {path:'subscribe11',component:Subscribe11Component},
   {path:'viewdetail',component:ViewdetailComponent},
+  {path:'comment',component:CommentComponent},
   {path:'**',component:PagenotfoundComponent},
 
 ];

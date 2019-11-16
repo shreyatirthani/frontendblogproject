@@ -70,4 +70,18 @@ delfollow(name)
   const headers=new HttpHeaders({Authorization:'Basic '+token});
   return this.httpclient.get("http://localhost:2020/sub/delfollower/"+name,{headers});
 }
+comment(id)
+{
+  const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/sub/comment/"+id,{headers});
+}
+addcomment(id,json)
+{
+  const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.post("http://localhost:2020/sub/savecomment/"+id,json,{headers});
+
+}
+
 }

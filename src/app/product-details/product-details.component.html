@@ -5,6 +5,7 @@
   <!--<i style="color:red"><b> AUTHOR->{{detail_prod.owner}}</b></i><br>-->
 
 <div class="btn btn-info"(click)="subscribe(detail_prod.id)">show</div>
+  <div class="btn btn-info"(click)="comment(detail_prod.id)">comments</div>
   <div class="btn btn-info"(click)="remove(detail_prod.id)" *ngIf="checkrole">remove</div>
   <!-- <div class="btn btn-info"(click)="edit()" *ngIf="checkrole">editproduct</div>-->
 </div>

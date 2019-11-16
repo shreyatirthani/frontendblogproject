@@ -18,7 +18,7 @@ detail_prod;
 pro2;
 checkrole;
 profile;
-
+public check;
 data1;
   constructor(private activatedroute:ActivatedRoute,private http:ItemService,private router:Router,private service1:LogingService) { }
 
@@ -73,5 +73,13 @@ remove(id)
     this.pro1=data;
   })
 }
+comment(id)
+{
+  /*this.service1.comment(id).subscribe(data=>{
+    this.check=data;
+  })*/
+  this.router.navigate(['/comment'],{queryParams:{id:id}});
+}
+
 
 }
