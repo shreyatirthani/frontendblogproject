@@ -26,6 +26,7 @@ import { ViewdetailComponent } from './viewdetail/viewdetail.component';
 import { Search1Component } from './search1/search1.component';
 import { Subscribe11Component } from './subscribe11/subscribe11.component';
 import { CommentComponent } from './comment/comment.component';
+import { PpComponent } from './pp/pp.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { CommentComponent } from './comment/comment.component';
     ViewdetailComponent,
     Search1Component,
     Subscribe11Component,
-    CommentComponent
+    CommentComponent,
+    PpComponent
 
   ],
   imports: [

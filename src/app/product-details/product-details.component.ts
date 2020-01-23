@@ -31,6 +31,7 @@ data1;
           this.checkrole = false;
       }
     )
+
    // this.pro=this.http.getItemlist();
    // this.pro1=this.http.getDetails();
     this.http.getDetails().subscribe((data)=> {
@@ -44,8 +45,10 @@ data1;
             this.detail_prod = this.pro1[i];
           }
         }
+        console.log( this.detail_prod.blogname);
       })
     })
+
 
   }
   additemincart(id)

@@ -83,5 +83,11 @@ addcomment(id,json)
   return this.httpclient.post("http://localhost:2020/sub/savecomment/"+id,json,{headers});
 
 }
+delcomment(comment,id)
+{
+  const token=sessionStorage.getItem('token');
+  const headers=new HttpHeaders({Authorization:'Basic '+token});
+  return this.httpclient.get("http://localhost:2020/sub/delcomment/"+comment+id,{headers});
+}
 
 }
